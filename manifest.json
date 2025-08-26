@@ -1,0 +1,68 @@
+{
+  "key": "mcp-chat-assistant",
+  "name": "MCP Chat Assistant",
+  "description": "AI Chat Assistant powered by MCP for Jira issue management",
+  "version": "1.0.0",
+  "vendor": {
+    "name": "Custom Integration",
+    "url": "https://example.com"
+  },
+  "baseUrl": "https://AP3SHIT.github.io/Jira-Assistant-",
+  "authentication": {
+    "type": "none"
+  },
+  "lifecycle": {
+    "installed": "/installed"
+  },
+  "scopes": [
+    "READ",
+    "WRITE"
+  ],
+  "modules": {
+    "generalPages": [
+      {
+        "key": "chat-config",
+        "location": "system.top.navigation.bar",
+        "name": {
+          "value": "Chat Config"
+        },
+        "url": "/config",
+        "conditions": [{
+          "condition": "user_is_admin"
+        }]
+      }
+    ],
+    "jiraIssueGlances": [
+      {
+        "key": "mcp-chat-glance",
+        "name": {
+          "value": "AI Chat"
+        },
+        "icon": {
+          "width": 16,
+          "height": 16,
+          "url": "/images/chat-icon.png"
+        },
+        "target": {
+          "type": "dialog",
+          "options": {
+            "width": "600px",
+            "height": "500px"
+          }
+        },
+        "url": "/chat?issueKey={issue.key}"
+      }
+    ],
+    "dialogs": [
+      {
+        "key": "chat-dialog",
+        "url": "/chat?issueKey={issue.key}",
+        "options": {
+          "width": "600px",
+          "height": "500px"
+        }
+      }
+    ]
+  },
+  "apiVersion": 1
+}

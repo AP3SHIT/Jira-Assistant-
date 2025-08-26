@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Chat Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://connect-cdn.atl-paas.net/all.js"></script>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-header">
+            <h3>AI Chat Assistant</h3>
+            <div id="connection-status">Disconnected</div>
+        </div>
+        
+        <div id="chat-messages"></div>
+        
+        <div id="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Ask about this issue..." disabled>
+            <button id="send-button" disabled>Send</button>
+        </div>
+        
+        <div id="config-section" style="display: none;">
+            <h4>Configuration</h4>
+            <input type="text" id="mcp-url" placeholder="Enter your n8n workflow URL">
+            <button id="connect-button">Connect</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
